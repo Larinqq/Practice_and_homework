@@ -1,65 +1,67 @@
 import random
 
+WORDS = ["cat", "dog", "boy", "margo"]
 
-def morse_encode(sentense):
+MORSE_TABLE = {
+    "0": "-----",
+    "1": ".----",
+    "2": "..---",
+    "3": "...--",
+    "4": "....-",
+    "5": ".....",
+    "6": "-....",
+    "7": "--...",
+    "8": "---..",
+    "9": "----.",
+    "a": ".-",
+    "b": "-...",
+    "c": "-.-.",
+    "d": "-..",
+    "e": ".",
+    "f": "..-.",
+    "g": "--.",
+    "h": "....",
+    "i": "..",
+    "j": ".---",
+    "k": "-.-",
+    "l": ".-..",
+    "m": "--",
+    "n": "-.",
+    "o": "---",
+    "p": ".--.",
+    "q": "--.-",
+    "r": ".-.",
+    "s": "...",
+    "t": "-",
+    "u": "..-",
+    "v": "...-",
+    "w": ".--",
+    "x": "-..-",
+    "y": "-.--",
+    "z": "--..",
+    ".": ".-.-.-",
+    ",": "--..--",
+    "?": "..--..",
+    "!": "-.-.--",
+    "-": "-....-",
+    "/": "-..-.",
+    "@": ".--.-.",
+    "(": "-.--.",
+    ")": "-.--.-"
+}
+
+
+def morse_encode(sentence):
     encoded_word = ""
-    morse_table = {
-        "0": "-----",
-        "1": ".----",
-        "2": "..---",
-        "3": "...--",
-        "4": "....-",
-        "5": ".....",
-        "6": "-....",
-        "7": "--...",
-        "8": "---..",
-        "9": "----.",
-        "a": ".-",
-        "b": "-...",
-        "c": "-.-.",
-        "d": "-..",
-        "e": ".",
-        "f": "..-.",
-        "g": "--.",
-        "h": "....",
-        "i": "..",
-        "j": ".---",
-        "k": "-.-",
-        "l": ".-..",
-        "m": "--",
-        "n": "-.",
-        "o": "---",
-        "p": ".--.",
-        "q": "--.-",
-        "r": ".-.",
-        "s": "...",
-        "t": "-",
-        "u": "..-",
-        "v": "...-",
-        "w": ".--",
-        "x": "-..-",
-        "y": "-.--",
-        "z": "--..",
-        ".": ".-.-.-",
-        ",": "--..--",
-        "?": "..--..",
-        "!": "-.-.--",
-        "-": "-....-",
-        "/": "-..-.",
-        "@": ".--.-.",
-        "(": "-.--.",
-        ")": "-.--.-"
-    }
 
-    for letter in sentense:
-        encoded_word += morse_table[letter]
+    for letter in sentence:
+        encoded_word += MORSE_TABLE[letter]
 
     return encoded_word
 
 
 def get_word():
-    words = ["cat", "dog", "boy", "margo"]
-    random_word = random.choice(words)
+    random_word = random.choice(WORDS)
     return random_word
 
 
@@ -74,15 +76,15 @@ def print_statistics(data:list):
 
 
 if __name__ == '__main__':
-    greating = " Today we gonna practice to encode morse code\n Press Enter to continue\n"
+    greeting = " Today we gonna practice to encode morse code\n Press Enter to continue\n"
     total_questions = 5
     question = 0
-    print(greating)
+    print(greeting)
     input()
     answers_list = []
 
     while question < total_questions:
-        question +=1
+        question += 1
         current_word = get_word()
         morse_code = morse_encode(current_word)
         print(f"Word {question}: {morse_code}\n User's answer >>>")
