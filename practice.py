@@ -65,7 +65,7 @@ def get_word():
     return random_word
 
 
-def print_statistics(data:list):
+def print_statistics(data: list):
     answers_counter = len(data)
     right_answers = 0
     for elem in data:
@@ -90,7 +90,7 @@ if __name__ == '__main__':
         print(f"Word {question}: {morse_code}\n User's answer >>>")
         users_answer = input().lower()
         if users_answer == current_word:
-            print(f"Rihgt, {current_word}")
+            print(f"Right, {current_word}")
             answers_list.append(True)
         else:
             print(f"Wrong, {current_word}")
