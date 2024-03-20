@@ -52,6 +52,11 @@ MORSE_TABLE = {
 
 
 def morse_encode(sentence):
+    """
+    encodes string
+    :param sentence: str
+    :return: encoded str
+    """
     encoded_word = ""
 
     for letter in sentence:
@@ -61,11 +66,19 @@ def morse_encode(sentence):
 
 
 def get_word():
+    """
+    Randomly gets a word from WORDS
+    :return: str
+    """
     random_word = random.choice(WORDS)
     return random_word
 
 
 def print_statistics(data: list):
+    """
+    Prints game stat, based on given list
+    :param data: list
+    """
     answers_counter = len(data)
     right_answers = 0
     for elem in data:
