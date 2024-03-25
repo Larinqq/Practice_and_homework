@@ -56,16 +56,12 @@ def check_mail(mail):
 
 def check_name(name):
     """
-    Cheks name consist of only Russian letters
+    Checks if name consist of only Russian letters and spaces
     :param name:
-    :return:
+    :return: boolean
     """
-    pattern = r'^[А-Яа-я\s]+$'
+    pattern = r'^[А-Яа-яеЕёЁ\s]+$'
     if re.match(pattern, name):
         return True
     else:
         return False
-
-
-
-
