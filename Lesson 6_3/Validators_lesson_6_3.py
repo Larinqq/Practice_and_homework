@@ -17,6 +17,9 @@ def check_pin(pin):
     elif pin == "1234":
         return False
 
+    elif len(pin) != 4:
+        return False
+
     return True
 
 
@@ -47,7 +50,7 @@ def check_mail(mail):
     :param mail: string
     :return: boolean
     """
-    pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+    pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+\.[A-Z|a-z]{2,}\b'
     if re.match(pattern, mail) is None:
         return False
 
