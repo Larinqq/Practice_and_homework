@@ -1,0 +1,4 @@
+Nikita:50
+Nikita:20
+Nikita:0
+Igor:70
