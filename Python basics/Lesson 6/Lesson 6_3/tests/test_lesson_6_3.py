@@ -1,5 +1,5 @@
 import sys
-sys.path.append("/home/larinqq/Practice_and_homework/Lesson 6_3/")
+sys.path.append("/Lesson 6/Lesson 6_3/")
 from Validators_lesson_6_3 import check_name, check_pass, check_mail, check_pin
 
 
