@@ -4,6 +4,7 @@ from Utils import get_words, get_shuffled_word, get_statistics, save_scores
 
 def main():
     users_score = 0
+    points_rate = 10
     print("Enter your name: ")
     user_name = input(">")
     content = get_words(WORDS_FILE_PATH)
@@ -12,8 +13,8 @@ def main():
         print(f"Guess the word: {shuffled_word}")
         users_guess = input().lower()
         if users_guess == word.lower():
-            users_score += 10
-            print("Correct! You earn 10 points!\n")
+            users_score += points_rate
+            print(f"Correct! You earn {points_rate} points!\n")
         else:
             print(f"Wrong! The answer is {word}\n")
 
