@@ -2,7 +2,7 @@ from Config import WORDS_FILE_PATH, STATISTICS_FILE_PATH
 from Utils import get_words, get_shuffled_word, get_statistics, save_scores
 
 
-if __name__ == '__main__':
+def main():
     users_score = 0
     print("Enter your name: ")
     user_name = input(">")
@@ -20,3 +20,7 @@ if __name__ == '__main__':
     save_scores(STATISTICS_FILE_PATH, user_name, users_score)
     games_played, max_score = get_statistics(STATISTICS_FILE_PATH)
     print(f"\nTotal games played: {games_played} \nHigh score: {max_score}")
+
+
+if __name__ == '__main__':
+    main()
