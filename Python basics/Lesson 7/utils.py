@@ -26,7 +26,7 @@ def draw_gamescreen(questions):
         game_field += f"{str(category).ljust(MAX_CATEGORY_TITTLE_LEN)}"
 
         for category_price, category_question in category_data.items():
-            if category_question["asked"] == "False":
+            if not category_question["asked"]:
                 game_field += f"{str(category_price).ljust(MAX_CATEGORY_POINTS_LEN+SPACES_BETWEEN_POINTS)}"
             else:
                 game_field += f"{str('').ljust(MAX_CATEGORY_POINTS_LEN + SPACES_BETWEEN_POINTS)}"
