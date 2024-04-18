@@ -88,3 +88,34 @@ def verify_user_data(user_data, questions_dict):
         return False
 
     return True
+
+
+def save_statistics(points, correct, incorrect, path):
+    """
+    Reads statistics file(creates it, if not found) and counts number of games played, saves the results to json
+    :param points: int earned points
+    :param correct: int correct answers
+    :param incorrect: int incorrect answers
+    :param path: path to json file with stats
+    """
+    game_count = 1
+
+    _ = open(path, 'a')
+    _.close()
+
+    with open(path, "r") as stat_json:
+        raw_json = stat_json.read()
+        temp_dict = {}
+        if len(raw_json):
+            temp_dict = json.loads(raw_json)
+            for _ in temp_dict.keys():
+                game_count += 1
+
+    temp_dict[game_count] = {
+        "points": points,
+        "incorrect": incorrect,
+        "correct": correct,
+    }
+
+    with open(path, "w") as stat_json:
+        json.dump(temp_dict, stat_json)
