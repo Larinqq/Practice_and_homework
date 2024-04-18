@@ -61,11 +61,12 @@ def get_answer(verified_data, questions_dict):
 
 def split_user_input(raw_input):
     """
-    splits given string separated with space
+    Formats and splits given string separated with space
     :param raw_input: string
     :return: tuple
     """
-    return tuple(raw_input.split())
+    raw_input = raw_input.lower().capitalize()
+    return raw_input.split()
 
 
 def verify_user_data(user_data, questions_dict):
@@ -113,9 +114,19 @@ def save_statistics(points, correct, incorrect, path):
 
     temp_dict[game_count] = {
         "points": points,
-        "incorrect": incorrect,
         "correct": correct,
+        "incorrect": incorrect,
     }
 
     with open(path, "w") as stat_json:
         json.dump(temp_dict, stat_json)
+
+
+def get_points(verified_data):
+    """
+    Get amount of points
+    :param verified_data: user input
+    :return: int amount of points
+    """
+    points = int(verified_data[1])
+    return points
